@@ -35,6 +35,7 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'c.vim'
 
 set number
 let g:WebDevIconsUnicodeDecorateFolderNodes=1
@@ -85,7 +86,11 @@ if has('autocdm')
 endif
 set mouse=a
 set scrolloff=5
-au VimEnter *  NERDTree
+au VimEnter *  NERDTreeFocus
+autocmd VimEnter * wincmd p
+"https://stackoverflow.com/a/4319165
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 
 "Tab Completeion
 set wildmenu
@@ -123,7 +128,13 @@ set guicursor=i:ver25-iCursor
 
 " Latex
 let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
+
+" C Stuff
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
+
