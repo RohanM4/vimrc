@@ -2,9 +2,10 @@
 call pathogen#infect()
 call pathogen#helptags()
 
-set encoding=utf-8
+set encoding=UTF-8
 set nocompatible
 set backspace=2
+let g:airline_powerline_fonts=1
 
 inoremap <Up> <nop>
 inoremap <Down> <nop>
@@ -31,8 +32,12 @@ Plugin 'vim-airline/vim-airline'
 " Color Schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 set number
+let g:WebDevIconsUnicodeDecorateFolderNodes=1
 
 " Gruvbox settings
 colorscheme gruvbox
@@ -80,6 +85,7 @@ if has('autocdm')
 endif
 set mouse=a
 set scrolloff=5
+au VimEnter *  NERDTree
 
 "Tab Completeion
 set wildmenu
@@ -111,3 +117,13 @@ autocmd FileType mail             let b:comment_leader = '> '
 autocmd FileType vim              let b:comment_leader = '" '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
+
+" Changing Cursor insert mode
+set guicursor=i:ver25-iCursor
+
+" Latex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
