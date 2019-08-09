@@ -15,14 +15,17 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-
+call vundle#begin()
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Plugin 'gmarik/vundle'
+call vundle#end()
 
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'lervag/vimtex'
 " Color Schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'arcticicestudio/nord-vim'
