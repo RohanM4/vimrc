@@ -36,6 +36,8 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'c.vim'
+" Plugin 'Townk/vim-autoclose'
+Plugin 'Raimondi/delimitMate'
 
 set number
 let g:WebDevIconsUnicodeDecorateFolderNodes=1
