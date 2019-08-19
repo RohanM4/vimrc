@@ -25,11 +25,9 @@ vim
 :PluginInstall
 :q!
 ```
-Here are some important commands to help you understand my vim configs.
+Here are some important commands to help you understand my vim.
 
 To comment a line, the command (in normal mode) is `,cc`   
 To uncomment a line, the command is `,cu`  
-To switch windows, the command is `control + w + w`. Basically hold control and hit `w` twice  
-You can navigate the file tree with normal vim commands (`h, j, k, l`) and click enter to open up a directory  
 
 
