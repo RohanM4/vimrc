@@ -39,7 +39,8 @@ Plugin 'c.vim'
 " Plugin 'Townk/vim-autoclose'
 Plugin 'Raimondi/delimitMate'
 let delimitMate_expand_cr = 1
-
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 set number
 let g:WebDevIconsUnicodeDecorateFolderNodes=1
 
@@ -157,6 +158,34 @@ augroup END
 " endif
 " "
 "
-
 let &t_SI="\033[6 q"
 let &t_EI="\033[6 q"
+
+
+" Snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" Latex Snippet
+" snippet beg "begin{} / end{}" bA
+" \begin{$1}
+" 	$0
+" \end{$1}
+" endsnippet
+" 
+
+" snippet mk "Math" wA
+" $${1}$`!p
+" if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+"     snip.rv = ' '
+" else:
+"     snip.rv = ''
+" `$2
+" endsnippet
+" 
+" " Java Snippets
+" 
+" snippet pl "sout"  b
+" System.out.println($1);$0
+" endsnippet
